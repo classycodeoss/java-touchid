@@ -26,7 +26,7 @@ void touchid_authenticate(const char* msg, authenticate_callback_type callback) 
             callback(YES, 0);
         } else {
             NSLog(@"Biometric authentication failed: %@", error);
-            callback(NO, (int)error.code);
+            callback(NO, (int32_t)error.code);
         }
     }];
 }

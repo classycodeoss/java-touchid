@@ -3,7 +3,7 @@ package com.classycode.touchidexample;
 import com.sun.jna.Callback;
 import com.sun.jna.Library;
 
-public interface JTouchID extends Library {
+interface JTouchID extends Library {
 
     interface AuthenticateTouchIDCallback extends Callback {
 

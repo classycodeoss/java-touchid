@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 // https://developer.apple.com/documentation/localauthentication/lacontext/1514149-canevaluatepolicy
-int touchid_supported(void);
+int32_t touchid_supported(void);
 
 // https://developer.apple.com/documentation/localauthentication/lacontext/1514176-evaluatepolicy
 void touchid_authenticate(const char* msg, authenticate_callback_type callback);

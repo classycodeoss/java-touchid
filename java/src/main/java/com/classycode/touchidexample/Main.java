@@ -26,7 +26,6 @@ public class Main {
         frame.setSize(200, 100);
 
         button = new JButton("Authenticate");
-        button.setEnabled(nativeLib.touchid_supported() == 1);
         button.addActionListener(e -> {
             button.setEnabled(false);
             label.setText("");
@@ -43,7 +42,7 @@ public class Main {
             button.setEnabled(true);
             label.setText("Touch ID is supported");
         } else {
-            button.setEnabled(true);
+            button.setEnabled(false);
             label.setText("Touch ID is not supported on this device");
         }
 
