@@ -42,7 +42,7 @@ public class Main {
             button.setEnabled(true);
             label.setText("Touch ID is supported");
         } else {
-            button.setEnabled(true);
+            button.setEnabled(false);
             label.setText("Touch ID is not supported on this device");
         }
 
