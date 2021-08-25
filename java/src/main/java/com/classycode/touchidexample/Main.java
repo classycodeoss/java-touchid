@@ -23,13 +23,13 @@ public class Main {
         JTouchID nativeLib = Native.load("JTouchID", JTouchID.class);
         final JFrame frame = new JFrame("Touch ID Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(200, 100);
+        frame.setSize(320, 100);
 
         button = new JButton("Authenticate");
         button.addActionListener(e -> {
             button.setEnabled(false);
             label.setText("");
-            nativeLib.touchid_authenticate("Hello from Java", touchIDCallback);
+            nativeLib.touchid_authenticate("use Touch ID from Java", touchIDCallback);
         });
         label = new JLabel();
 
@@ -47,7 +47,6 @@ public class Main {
         }
 
         frame.add(panel);
-        frame.pack();
         frame.setVisible(true);
     }
 
