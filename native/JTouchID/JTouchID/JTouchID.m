@@ -15,7 +15,7 @@ int32_t touchid_supported(void) {
     return supportsTouchID;
 }
 
-void touchid_authenticate(const char* msg, authenticate_callback_type callback) {
+void touchid_authenticate(const char* msg, auth_cb_t callback) {
     NSLog(@"Authenticate with biometrics");
     NSString* reason = [NSString stringWithCString:msg encoding:NSUTF8StringEncoding];
     [[LAContext new] evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics
