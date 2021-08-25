@@ -5,12 +5,12 @@ import com.sun.jna.Library;
 
 interface JTouchID extends Library {
 
-    interface AuthenticateTouchIDCallback extends Callback {
+    interface AuthCallback extends Callback {
 
         void callback(int result, int laError);
     }
 
     int touchid_supported();
 
-    void touchid_authenticate(String message, AuthenticateTouchIDCallback callback);
+    void touchid_authenticate(String message, AuthCallback callback);
 }

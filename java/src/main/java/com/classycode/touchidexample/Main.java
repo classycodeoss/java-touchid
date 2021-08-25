@@ -10,7 +10,7 @@ public class Main {
     private JButton button;
     private JLabel label;
 
-    private JTouchID.AuthenticateTouchIDCallback touchIDCallback = (result, laError) -> {
+    private JTouchID.AuthCallback touchIDCallback = (result, laError) -> {
         if (result == 1) {
             label.setText("Authentication successful");
         } else {
@@ -29,7 +29,7 @@ public class Main {
         button.addActionListener(e -> {
             button.setEnabled(false);
             label.setText("");
-            nativeLib.touchid_authenticate("Please prove that you own this device", touchIDCallback);
+            nativeLib.touchid_authenticate("Hello from Java", touchIDCallback);
         });
         label = new JLabel();
 
@@ -42,7 +42,7 @@ public class Main {
             button.setEnabled(true);
             label.setText("Touch ID is supported");
         } else {
-            button.setEnabled(false);
+            button.setEnabled(true);
             label.setText("Touch ID is not supported on this device");
         }
 
